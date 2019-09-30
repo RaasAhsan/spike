@@ -9,7 +9,7 @@ const startTime = moment();
 
 async function start() {
   client.on('ready', () => {
-    console.log('Logged in');
+    console.log('Logged in.');
   });
 
   client.on('message', message => {
