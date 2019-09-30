@@ -1,5 +1,4 @@
 stages:
-  - test
   - name: publish
     if: branch = master AND type = push
   - name: deploy
