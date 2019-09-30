@@ -16,7 +16,7 @@ async function start() {
     if (message.content === '!ping') {
       message.reply('pong');
     } else if (message.content === '!uptime') {
-      const uptime = moment().from(startTime, true);
+      const uptime = startTime.fromNow(true);
       message.reply(`I have been running for ${uptime}.`);
     }
   });
