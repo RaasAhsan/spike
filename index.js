@@ -1,16 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const moment = require('moment');
+
 const LolesportsPoller = require('./lib/lolesports-poller');
+
+const startTime = moment();
 
 async function start() {
   client.on('ready', () => {
-    console.log('logged in');
+    console.log('Logged in');
   });
 
   client.on('message', message => {
     if (message.content === '!ping') {
       message.reply('pong');
+    } else if (message.content === '!uptime') {
+      const uptime = moment().from(startTime, true);
+      message.reply(`I have been running for ${uptime}.`);
     }
   });
 
